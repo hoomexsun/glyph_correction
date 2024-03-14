@@ -1,8 +1,8 @@
 # glyph_correction 🏁
 
-Made to correct s550 glyphs into correct Bengali Unicode characters.
+Built to correct s550 glyphs into Bengali Unicode characters.
 
-Check out [Wahei](https://https://github.com/hoomexsun/wahei) for manual correction!
+## Status
 
 🏁 This repository is fully developed!
 
@@ -17,7 +17,7 @@ Check out [Wahei](https://https://github.com/hoomexsun/wahei) for manual correct
 2. Install python requirements. Please refer [requirements.txt](requirements.txt)
 3. Now, run `main.py`.
 
-### Testing
+### Usage
 
 After Step 1 & 2 from Quickstart.
 
@@ -26,7 +26,7 @@ After Step 1 & 2 from Quickstart.
 
    ```python
    from pathlib import Path
-   from src.gc_ import GlyphCorrection
+   from gc_ import GlyphCorrection
 
    content = Path("<YOUR_FILE_PATH>").read_text(encoding=utf-8)
    gc = GlyphCorrection()
@@ -38,13 +38,9 @@ After Step 1 & 2 from Quickstart.
 
 3. Now, run `main.py`.
 
-## Use on your project
-
-Clone `src/basic_` and `src.gc_` folder in your `main_project/src` and use similarly as given in Quickstart.
-
 ## GUI
 
-Run `gui.py`. (Still under construction)
+Run `gui.py`. (Still under construction 🚧)
 
 ## Algorithm
 
