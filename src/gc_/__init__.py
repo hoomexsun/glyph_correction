@@ -1,9 +1,9 @@
 from typing import Dict, List, Set, Tuple
 
 from tqdm import tqdm
-from lon import Bengali
-from e2b import E2B
 
+from .e2b import E2B
+from ..lon_ import Bengali
 
 __all__ = ["GlyphCorrection"]
 

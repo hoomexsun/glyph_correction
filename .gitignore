@@ -16,5 +16,5 @@ pip-delete-this-directory.txt
 
 # User Defined
 debug.py
-gui.py
 old*
+test*

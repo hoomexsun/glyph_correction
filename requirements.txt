@@ -1,2 +1,1 @@
 tqdm # For progress bar
-sv_ttk # for GUI

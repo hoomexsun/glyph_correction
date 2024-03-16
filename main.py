@@ -2,7 +2,7 @@ import csv
 import json
 
 from pathlib import Path
-from gc_ import GlyphCorrection
+from src.gc_ import GlyphCorrection
 
 TEST_DATA_PATH = "data/words.txt"
 OUTPUT_PATH = "data/output.txt"

@@ -1,5 +1,6 @@
 from typing import Dict, Set
-from lon import Bengali
+
+from ..lon_ import Bengali
 
 
 class E2B:
