@@ -1,20 +1,17 @@
-import csv
-import json
-
 from pathlib import Path
+
 from src.gc_ import GlyphCorrection
-
-TEST_DATA_PATH = "data/words.txt"
-OUTPUT_PATH = "data/output.txt"
-WORDMAP_PATH = "data/wordmap"
+from utils import create_wordmap
 
 
-def main(
-    data_path: str | Path = TEST_DATA_PATH,
-    output_path: str | Path = OUTPUT_PATH,
+def run(
     mk_wmap: bool = True,
-    wordmap_path: str | Path = WORDMAP_PATH,
 ):
+    root_dir = "data"
+    data_path = f"{root_dir}/words.txt"
+    output_path = f"{root_dir}/output.txt"
+    wordmap_path = f"{root_dir}/wordmap"
+
     content: str = Path(data_path).read_text(encoding="utf-8")
     gc = GlyphCorrection()
     output: str = gc.correct_words(content)
@@ -26,27 +23,8 @@ def main(
         encoding="utf-8",
     )
     if mk_wmap:
-        wordmap = {
-            word: corrected
-            for word, corrected in zip(content.split("\n"), output.split("\n"))
-        }
-        # 1. Save in txt format
-        txt_path = Path(wordmap_path).with_suffix(".txt")
-        txt_path.write_text(
-            "\n".join([f"{word}\t{corrected}" for word, corrected in wordmap.items()]),
-            encoding="utf-8",
-        )
-        # 2. Save in json format
-        json_path = Path(wordmap_path).with_suffix(".json")
-        json_path.write_text(json.dumps(wordmap, ensure_ascii=False), encoding="utf-8")
-        # 3. Save in csv format
-        csv_path = Path(wordmap_path).with_suffix(".csv")
-        with csv_path.open(mode="w", encoding="utf-8", newline="") as csv_file:
-            writer = csv.DictWriter(csv_file, fieldnames=("s550", "bn"))
-            writer.writeheader()
-            for word_s550, word_bn in wordmap.items():
-                writer.writerow({"s550": word_s550, "bn": word_bn})
+        create_wordmap(content, output, wordmap_path)
 
 
 if __name__ == "__main__":
-    main()
+    run()

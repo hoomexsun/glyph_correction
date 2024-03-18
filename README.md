@@ -44,7 +44,7 @@ After Step 1 & 2 from Quickstart.
 1. Add this repository as submodule
 
    ```bash
-   git submodule add https://github.com/hoomexsun/glyph_correction
+   git submodule add https://github.com/hoomexsun/glyph_correction.git
    ```
 
 2. Create a `GlyphCorrection` object after importing and then use its functions.
@@ -59,10 +59,10 @@ After Step 1 & 2 from Quickstart.
 
 Check out gui built using tkinter on [XLIT](https://github.com/hoomexsun/xlit).
 
-## Algorithm
+## Algorithm 1 (Glyph Correction)
 
-**Input:** Unicode used as Bengali Glyph, {a₀, a₁, …, aₘ₋₁}  
-**Output:** Correct Bengali Unicode {b₀, b₁, …, bₙ₋₁}
+**Input:** Unicode used as Bengali Glyph, A or {a₀, a₁, …, aₘ₋₁}  
+**Output:** Correct Bengali Unicode, B or {b₀, b₁, …, bₙ₋₁}
 
 1. Pre-adjust glyphs in **A**
 2. **B** ← map_unicode[**A**]  
